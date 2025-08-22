@@ -1,5 +1,7 @@
-const getNotes = function () {
-  return "notes are here...";
-};
+export function getNotes() {
+  return "notes are here... or are they??";
+}
 
-module.exports = getNotes;
+export function myFunction() {
+  return "This is my exported function.";
+}
