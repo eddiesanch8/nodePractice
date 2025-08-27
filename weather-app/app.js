@@ -2,7 +2,7 @@
 // Dont share this key
 
 const request = require("postman-request");
-
+const geoCode = require("./utils/geocode");
 // const toFahrenheit = function (c) {
 //   let f = c * 1.8 + 32;
 //   return f;
@@ -45,15 +45,7 @@ const request = require("postman-request");
 //   }
 // });
 
-const geoCode = (address, callback) => {
-  const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(
-    address
-  )}.json?access_token=pk.eyJ1IjoiZXNhbmNoZXoxMTIiLCJhIjoiY21ldDFjM2ZjMDh0cDJrb25lcDFtNDRpZCJ9.aaONUWlwbU-JiZL00Za83g&limit=1`;
-  request({ url: geoUrl, json: true }, (error, response) => {
-    if (error) {
-      callback("unable to connect to server");
-    } else if (response.features.length === 0) {
-      callback("cannot find location given");
-    }
-  });
-};
+geoCode("New York", (error, response) => {
+  console.log("Error", error);
+  console.log("Response", response);
+});
