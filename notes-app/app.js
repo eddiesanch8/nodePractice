@@ -1,43 +1,68 @@
 #!/usr/bin/env node
-// index.js
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
+import { addNote, deleteNote, listNotes, readNote } from "./notes.js";
 
+debugger;
 yargs(hideBin(process.argv))
   .command(
-    "greet <name>",
-    "says hello to given name",
+    // no need for name or describe!
+    "add <title>",
+    "appends a given task",
     (yargs) => {
-      yargs.positional("name", {
-        describe: "The name to greet",
+      // BUILDER FUNCTION - Configure what this command accepts
+      yargs.positional("title", {
+        describe: "The title of task to complete",
+        type: "string",
+        demandOption: true,
+      });
+      yargs.option("body", {
+        describe: "list of items",
+        alias: ["b", "body"],
+        type: "array",
+        default: [],
+      });
+    },
+    // HANDLER FUNCTION - What to do with the parsed arguments
+
+    (argv) => {
+      addNote(argv.title, argv.body);
+    }
+  )
+
+  .command(
+    "remove <title>",
+    "Removes a given task by finding its title",
+    (yargs) => {
+      yargs.positional("title", {
+        describe: "Task to remove",
         type: "string",
         demandOption: true,
       });
     },
     (argv) => {
-      console.log(`hello ${argv.name}!`);
+      deleteNote(argv.title);
     }
   )
+  .command("list", "lists out all tasks", (argv) => {
+    listNotes(argv);
+  })
+
   .command(
-    "add <num1> <num2>",
-    "Adds two numbers",
+    "read <title>",
+    "reads a specific task",
     (yargs) => {
-      yargs
-        .positional("num1", {
-          describe: "First number",
-          type: "number",
-          demandOption: true,
-        })
-        .positional("num2", {
-          describe: "Second number",
-          type: "number",
-          demandOption: true,
-        });
+      yargs.positional("title", {
+        describe: "Task to read",
+        type: "string",
+        demandOption: true,
+      });
     },
     (argv) => {
-      console.log(`Sum: ${argv.num1 + argv.num2}`);
+      readNote(argv.title);
     }
   )
+
   .help() // Enable automatic help generation
-  .demandCommand(1, "You need at least one command before moving on") // Require at least one command
+  // .demandCommand(1, "You need at least one command before moving on") // Require at least one command
   .parse(); // Parse the arguments
