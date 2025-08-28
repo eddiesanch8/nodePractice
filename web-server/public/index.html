@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Corazón</title>
+    <link rel="style" href="/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <button
+        class="open-sidebar"
+        data-open-btn
+        aria-label="open-sidebar"
+        aria-expanded="false"
+        aria-controls="nav-bar"
+      >
+        <!-- <img src="images/hamburger.svg" /> -->
+      </button>
+      <nav class="nav-bar" data-nav-bar>
+        <button class="nav-bar--close">
+          <!-- <img src="images/close-nav-btn.svg" alt="close" data-close-btn /> -->
+        </button>
+        <ul class="nav-bar__ul">
+          <li class="nav-bar__item">
+            <a href="index.html" aria-current="page">
+              <!-- <img class="logo" src="images/corazon-ecommerce.png" /> -->
+            </a>
+          </li>
+          <li class="nav-bar__item">
+            <a class="nav-bar__anchor" href="products/products.html">
+              Products</a
+            >
+          </li>
+          <li class="nav-bar__item">
+            <a class="nav-bar__anchor" href="contact/contact.html">
+              Contact Us</a
+            >
+          </li>
+          <li class="nav-bar__item">
+          <a class="nav-bar__anchor" href="">
+            <img src="../images/cart-icon.svg"
+          /></a>
+        </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="overlay" data-overlay aria-hidden="true"></div>
+
+    <main class="grid-container">
+      <section class="hero">
+        <div class="hero__header">
+            <h1 class> Wear Your Heart on Both Your Sleeves</h1>
+        </h1>
+        </div>
+
+        <div class="hero__cta"> 
+
+          <div class="hero__div">
+          <h2>New Threads</h2>
+          <button class="hero__btn"> <a  href="products/products.html">Shop now</a></button>
+          </div>
+          
+          <div class="hero__div">
+          <h2> Contact us</h2>
+          <button class="hero__btn"><a href="contact/contact.html">Contact</a></button>
+          </div>
+        </div>
+      
+      </section>
+      
+
+      <section class="products-grid">
+
+        <article class="product__article product__article--accessories">
+          <div class="product__overlay"> <a href="products/products.html" class="product__anchor"> Accessories</a></div>
+        </article>
+
+        <article class="product__article product__article--shoes">
+          <div class="product__overlay"> <a href="products/products.html" class="product__anchor"> Shoes</a></div>
+        </article>
+
+        <article class="product__article product__article--tops">
+          <div class="product__overlay"> <a href="products/products.html" class="product__anchor">Thrifted Tops</a></div>
+        </article>
+    
+
+      
+      </section>
+          
+
+    </main>
+
+    <footer class="web-footer">
+      <ul class="footer-container">
+         <li class="footer-item">
+          <a href="../contact/contact.html">Contact Us </a>
+        </li>
+        <li class="footer-item"><a href="">Privacy Notice </a></li>
+        <li class="footer-item"><a href="">Instagam</a></li>
+      <li class="footer-item"><a href="https://github.com/eddiesanch8">GitHub</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>
