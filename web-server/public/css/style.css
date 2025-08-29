@@ -1,7 +1,82 @@
-h1 {
-  color: rgb(250, 0, 0);
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.title {
+  text-align: center;
+  font-weight: 700;
+}
+.hero-border {
+  width: 25%;
+  height: auto;
 }
 
 body {
-  background-color: rgb(212, 242, 212);
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: #f0f0f0;
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
 }
+
+.web-footer {
+  background-color: #0f0f23;
+  width: 100%;
+  padding: 1.5rem;
+}
+.web-footer a {
+  color: #f0f0f0;
+  text-decoration: none;
+}
+.web-footer a:hover {
+  background-color: #f0f0f088;
+}
+@media (max-width: 400px) {
+  .web-footer {
+    padding: 1rem;
+  }
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+}
+@media (max-width: 400px) {
+  .footer-container {
+    flex-direction: column;
+  }
+}
+
+.footer-item {
+  cursor: pointer;
+}
+.footer-item a {
+  color: #f0f0f0;
+  text-decoration: none;
+}
+
+.weather-footer {
+  justify-content: space-between;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.weather-footer-wrapper {
+  margin-top: auto;
+}
+
+.weather-footer a {
+  text-align: center;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 400;
+}
+/*# sourceMappingURL=shared.css.map */
