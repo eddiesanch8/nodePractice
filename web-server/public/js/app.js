@@ -1,8 +1,11 @@
+// ------------------ form selection ---------------\\
 const form = document.querySelector("#weather-form");
 const search = document.querySelector("[data-forminput]");
 const locationMsg = document.querySelector("[data-location]");
 const forecastMsg = document.querySelector("[data-forecast]");
 const errorMsg = document.querySelector("[data-error]");
+
+// ------------------ client-side js to fetch data--------\\
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();

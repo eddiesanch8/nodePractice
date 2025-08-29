@@ -1,5 +1,7 @@
+// using postamn request as request is deprecated
 const request = require("postman-request");
 
+// callback function for using 2 apis to make a customized fetch
 const forecast = (latitude, longitude, callback) => {
   const url = `https://api.weatherstack.com/current?access_key=c3bebdc2823598f5e839294ddd795a3a&query=${longitude},${latitude}&units=f`;
   request({ url: url, json: true }, (error, { body }) => {
