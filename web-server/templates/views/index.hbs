@@ -6,10 +6,24 @@
     <title>Weather</title>
     <link rel="icon" href="/web-server/public/img/weather.png">
     <link rel="stylesheet" href="/css/style.css" />
-    <script src="/js/app.js"></script>
+    <script src="/js/app.js" defer></script>
   </head>
   <body>
     {{>header}}
+    <main>
+
+<p class="weather-para">Use this to find weather</p>
+<form id="weather-form">
+
+  <input type="text" placeholder="Ex: New York" required data-forminput>
+  <button type="submit" class="search"> Search</button>
+</form>
+
+<p style="color:red; font-size:2rem;" data-error></p>
+<p data-location></p>
+<p data-forecast></p>
+
+    </main>
     {{>footer}}
 
 
